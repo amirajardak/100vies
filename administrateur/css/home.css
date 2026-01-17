@@ -1,0 +1,168 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 0;
+  border-bottom: 2px solid #eee;
+}
+
+header .logo {
+  float: left;
+  font-size: 2em;
+  color: #d70000;
+  font-weight: 700;
+}
+
+header nav {
+  float: right;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* Hero */
+.hero {
+  background: url('blood-donation-hero.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: #d70000;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #d70000;
+  border: 2px solid #d70000;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section-alt {
+  background: #f8f8f8;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.stat h3 {
+  font-size: 2em;
+  color: #d70000;
+  margin-bottom: 10px;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 40px auto 0 auto;
+}
+
+.signup-form input, .signup-form select {
+  padding: 12px;
+  border-radius: 30px;
+  border: 2px solid #d70000;
+  outline: none;
+}
+
+.signup-form button {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cards, .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,94 @@
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;}
+body{background:linear-gradient(135deg,#f8f9fa,#eef1f4);color:#2c2c2c;}
+
+/* ===== INTRO ===== */
+.intro{text-align:center;padding:40px 20px 10px;}
+.intro h1{color:#b11226;font-weight:700;margin-bottom:10px;font-size:28px;}
+.intro p{max-width:600px;margin:auto;color:#555;font-size:14px;line-height:1.6;}
+
+/* ===== SWITCH ===== */
+h6{text-align:center;margin:25px 0;}
+h6 span{padding:0 18px;font-weight:600;text-transform:uppercase;color:#555;}
+
+.checkbox{display:none}
+.checkbox + label{
+	width:64px;height:18px;background:#e63946;border-radius:10px;display:block;margin:12px auto 30px;cursor:pointer;position:relative;transition:0.3s;
+}
+.checkbox + label:before{
+	content: '❤';font-family: inherit;font-size: 18px;width:36px;height:36px;background:white;color:#e63946;
+	border-radius:50%;position:absolute;top:-9px;left:-9px;display:flex;align-items:center;justify-content:center;transition:.5s;box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+.checkbox:checked + label:before{transform:translateX(46px) rotate(-270deg);}
+
+/* ===== CARD 3D ===== */
+.card-3d-wrap{
+	width:500px;max-width:92%;height:auto;margin:20px auto 60px;perspective:1200px;
+}
+.card-3d-wrapper{
+	width:100%;position:relative;transform-style:preserve-3d;transition:700ms ease;
+}
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper{transform:rotateY(180deg);}
+
+.card-front,.card-back{
+	position:absolute;width:100%;background:white;border-radius:16px;backface-visibility:hidden;
+	box-shadow:0 20px 40px rgba(0,0,0,.15);padding:40px 30px;overflow:hidden;
+}
+.card-back{transform:rotateY(180deg);}
+
+/* ===== HEADER ET BARRE D'ÉTAPE ===== */
+.center-wrap{text-align:center;}
+.center-wrap h2{color:#b11226;margin-bottom:8px;}
+.center-wrap p{font-size:13px;color:#666;margin-bottom:20px;}
+
+/* Barre d'étape */
+.progress-bar{height:6px;width:100%;background:#eee;border-radius:5px;margin-bottom:20px;overflow:hidden;}
+.progress-bar-fill{height:100%;width:0%;background:#e63946;border-radius:5px;transition:0.4s ease;}
+
+/* ===== FORMULAIRES ===== */
+.form-step{display:flex;flex-direction:column;gap:12px;transition:0.5s;}
+.form-step.hide{transform:translateX(100%);opacity:0;position:absolute;top:0;}
+.form-step.active{transform:translateX(0);opacity:1;position:relative;}
+
+.form-style{
+	width:100%;height:44px;padding:12px 40px 12px 12px;border-radius:10px;border:1px solid #ddd;background:#fafafa;font-size:13px;
+	position:relative;
+}
+.form-style:focus{outline:none;border-color:#e63946;background:white;}
+.form-style::placeholder{color:#999;}
+
+/* icônes dans les champs */
+.form-style-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#e63946;font-size:18px;pointer-events:none;}
+
+/* ===== BUTTONS ===== */
+.btn{
+	margin-top:10px;height:46px;width:100%;background:#b11226;color:white;border:none;border-radius:12px;font-weight:600;font-size:14px;cursor:pointer;
+	transition:.3s;position:relative;overflow:hidden;
+}
+.btn:hover{background:#b11226;}
+
+.btn:hover:after{left:0;}
+
+/* Navigation étapes */
+.step-buttons{display:flex;justify-content:space-between;margin-top:15px;}
+.step-buttons button{width:48%}
+
+/* ===== MOBILE ===== */
+@media(max-width:480px){
+	.card-3d-wrap{height:auto;padding-bottom:20px}
+	.center-wrap{padding:0 20px}
+}
+body {
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#f8f9fa,#eef1f4);
+    color:#2c2c2c;
+    min-height:100vh;
+    padding-bottom:150px; /* espace vide en bas */
+}
+.card-3d-wrap {
+    width:500px;
+    max-width:92%;
+    height:auto;
+    margin:20px auto;
+    perspective:1200px;
+}

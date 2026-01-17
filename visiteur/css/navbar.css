@@ -1,0 +1,111 @@
+/* ===== NAVBAR (style.css) ===== */
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 25px 60px;
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 18px 35px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: none;
+    transform: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    gap: 0 !important;
+}
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    gap: 45px;
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #e53935;
+}
+
+/* BOUTONS */
+.btn-connexion1 {
+    padding: 8px 22px;
+    background-color: #e53935;
+    border-radius: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+
+    margin-left: 6px;
+}
+.btn-connexion {
+    padding: 8px 22px;
+    border: 2px solid #e53935;
+    border-radius: 30px;
+    color: #e53935;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.btn-connexion:hover {
+    background: #e53935;
+    color: white;
+}
+
+/* OPTIONNEL: header au scroll */
+header.scrolled {
+    background: rgba(224, 163, 255, 0.12);
+    backdrop-filter: blur(30px);
+    border-bottom: 1px solid rgba(224, 163, 255, 0.2);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 0 1px rgba(224, 163, 255, 0.1);
+}
+
+/* (présent plus bas dans style.css) : redéfinition header + glass */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background: transparent;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+header.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+/* regroupe les boutons et contrôle l’espace */
+.nav-actions{
+  display: flex;
+  align-items: center;
+  gap: 6px;           /* <-- ici tu règles l’écart */
+}
+
+/* supprimer l’ancien margin qui fausse tout */
+.btn-connexion1{
+  margin-left: 0 !important;
+}
+nav { margin-left: auto;
+margin-top: 10px; }   /* pousse le nav + boutons vers la droite */
+.nav-actions { margin-left: 50px;}
+

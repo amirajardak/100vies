@@ -1,0 +1,186 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff5f5;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #b0060f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    h2 {
+      color: #b0060f;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, select {
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      border-color: #e50914;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h3 {
+      color: #e50914;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffe5e5;
+      padding-bottom: 5px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #e50914;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      align-self: center;
+    }
+
+    .btn:hover {
+      background-color: #b0060f;
+    }
+
+    footer {
+      background-color: #b0060f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+    }
+
+    /* Thème clair par défaut */
+:root {
+    --bg: #ffffff;
+    --text: #222222;
+    --card: #f5f5f5;
+    --header: #eaeaea;
+}
+
+/* Thème sombre */
+.dark-theme {
+    --bg: #1a1a1a;
+    --text: #f1f1f1;
+    --card: #2a2a2a;
+    --header: #333333;
+}
+
+/* Application */
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: .3s ease;
+}
+
+header {
+    background: var(--header);
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Containers */
+.container {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 80%;
+    transition: .3s;
+}
+
+/* Bouton du thème */
+.theme-btn {
+    background: var(--card);
+    color: var(--text);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.theme-btn:hover {
+    opacity: 0.7;
+}
+
+/* Inputs */
+input, select {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid #888;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: .3s;
+}
+
+button.btn {
+    background: #cc0000;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
