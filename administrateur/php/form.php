@@ -6,6 +6,7 @@ $message = "";
 
 
 if (isset($_POST["login"])) {
+  mysqli_set_charset($conn, "utf8");
     // 🔹 Sécurisation des entrées
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -18,7 +19,7 @@ if (isset($_POST["login"])) {
         $user = mysqli_fetch_assoc($resDonneur);
         $_SESSION["user_id"] = $user["id_donneur"];
         $_SESSION["role"] = "donneur";
-        header("Location: http://localhost/sensibilisation-au-don-de-sang/Donneur/php/donneur.php");
+        header("Location: http://localhost/100vies/Donneur/php/donneur.php");
         exit();
     }
 
@@ -30,7 +31,7 @@ if (isset($_POST["login"])) {
         $user = mysqli_fetch_assoc($resReceveur);
         $_SESSION["user_id"] = $user["id_receveur"];
         $_SESSION["role"] = "receveur";
-        header("Location: http://localhost/sensibilisation-au-don-de-sang/receveur/php/receveur.php");
+        header("Location: http://localhost/100vies/receveur/php/receveur.php");
         exit();
     }
 
@@ -42,7 +43,7 @@ if (isset($_POST["login"])) {
         $user = mysqli_fetch_assoc($resAdmin);
         $_SESSION["user_id"] = $user["id_admin"];
         $_SESSION["role"] = "admin";
-        header("Location: http://localhost/sensibilisation-au-don-de-sang/administrateur/php/dashboard.php");
+        header("Location: http://localhost/100vies/administrateur/php/dashboard.php");
         exit();
     }
 

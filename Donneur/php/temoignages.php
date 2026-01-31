@@ -97,13 +97,13 @@ function isActiveGroup($pages) {
         Mes notifications 
       </a>
 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php">
+      <a href="http://localhost/100vies/administrateur/php/inscription.php">
         <i class="uil uil-plus"></i> Ajouter un compte
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/receveur/php/receveur.php">
+      <a href="http://localhost/100vies/receveur/php/receveur.php">
         <i class="uil uil-exchange"></i> Modifier statut
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/form.php">
+      <a href="http://localhost/100vies/administrateur/php/form.php">
         <i class="uil uil-signout"></i> Déconnexion
       </a>  
     </div> 
@@ -132,10 +132,10 @@ function isActiveGroup($pages) {
 <div class="row g-4">
 <?php foreach($temoignages as $t): ?>
   <div class="col-md-6">
-    <div class="temoignage-card">
+    <div class="temoignage-card pt-4 ps-4">
       <h5><?= htmlspecialchars($t['nom']) ?></h5>
       <span class="badge-custom"><?= htmlspecialchars($t['role']) ?></span>
-      <p class="mt-2"><?= nl2br(htmlspecialchars($t['histoire'])) ?></p>
+      <p class="mt-3"><?= nl2br(htmlspecialchars($t['histoire'])) ?></p>
     </div>
   </div>
 <?php endforeach; ?>

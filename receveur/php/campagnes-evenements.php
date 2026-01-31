@@ -107,15 +107,15 @@ function activeIn(array $pages) {
       </a>
 
 
-        <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php">
+        <a href="http://localhost/100vies/administrateur/php/inscription.php">
           <i class="uil uil-plus"></i> Ajouter un compte
         </a> 
 
-        <a href="http://localhost/sensibilisation-au-don-de-sang/Donneur/php/donneur.php">
+        <a href="http://localhost/100vies/Donneur/php/donneur.php">
           <i class="uil uil-exchange"></i> Modifier statut
         </a> 
 
-        <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/form.php">
+        <a href="http://localhost/100vies/administrateur/php/form.php">
           <i class="uil uil-signout"></i> Déconnexion
         </a> 
       </div> 
@@ -171,7 +171,7 @@ function activeIn(array $pages) {
             <img src="../media/campagne/<?= htmlspecialchars($ev['image']) ?>" 
                  class="card-img-top" 
                  alt="<?= htmlspecialchars($ev['titre']) ?>" 
-                 style="height:200px; object-fit: cover;">
+                 style="object-fit: cover;">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title fw-bold"><?= htmlspecialchars($ev['titre']) ?></h5>
               <p class="text-muted mb-1" style="font-size:0.9rem;">

@@ -1,3 +1,91 @@
+<?php
+session_start();
+include("connexion.php");
+
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    if (!isset($_POST["role"])) {
+        $message = "Rôle non défini.";
+    } else {
+
+        $role = $_POST["role"];
+
+        // Common fields
+        $nom = mysqli_real_escape_string($conn, $_POST["nom"]);
+        $prenom = mysqli_real_escape_string($conn, $_POST["prenom"]);
+        $email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+        // 🔒 Check duplicate email (donneur + receveur)
+        $check = mysqli_query(
+            $conn,
+            "SELECT id_receveur FROM receveur WHERE email_receveur='$email'
+             UNION
+             SELECT id_donneur FROM donneur WHERE email='$email'"
+        );
+
+        if (mysqli_num_rows($check) > 0) {
+            $message = "Cet email est déjà utilisé.";
+        } else {
+
+            /* ================= RECEVEUR ================= */
+            if ($role === "receveur") {
+
+                $groupe = $_POST["groupe"];
+                $hopital = mysqli_real_escape_string($conn, $_POST["hopital"]);
+                $date = $_POST["date_demande"];
+
+                // default values
+                $besoin_urgent = 0;
+                $description = "";
+
+                $sql = "INSERT INTO receveur
+                        (nom_receveur, prenom_receveur, groupe_sanguin_receveur, hopital,
+                         besoin_urgent, date_demande, description, email_receveur, mdp_receveur)
+                        VALUES
+                        ('$nom', '$prenom', '$groupe', '$hopital',
+                         '$besoin_urgent', '$date', '$description', '$email', '$password')";
+
+                if (mysqli_query($conn, $sql)) {
+                    $_SESSION["user_id"] = mysqli_insert_id($conn);
+                    $_SESSION["role"] = "receveur";
+                    header("Location: /100vies/receveur/php/receveur.php");
+                    exit();
+                } else {
+                    $message = "Erreur receveur : " . mysqli_error($conn);
+                }
+            }
+
+            /* ================= DONNEUR ================= */
+            elseif ($role === "donneur") {
+
+                $datenais = $_POST["datenais"];
+                $sexe = $_POST["sexe"];
+                $groupe = $_POST["groupe"];
+                $adresse = "";
+
+                $sql = "INSERT INTO donneur
+                        (nom, prenom, datenais, sexe, grp_sanguin, email, mdp, adresse)
+                        VALUES
+                        ('$nom', '$prenom', '$datenais', '$sexe', '$groupe', '$email', '$password', '$adresse')";
+
+                if (mysqli_query($conn, $sql)) {
+                    $_SESSION["user_id"] = mysqli_insert_id($conn);
+                    $_SESSION["role"] = "donneur";
+                    header("Location: /100vies/Donneur/php/donneur.php");
+                    exit();
+                } else {
+                    $message = "Erreur donneur : " . mysqli_error($conn);
+                }
+            }
+        }
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,7 +122,8 @@
 
 <div class="progress-bar"><div class="progress-bar-fill" id="progress-receveur"></div></div>
 
-<form id="receveurForm" method="POST" action="créer_compte_receveur.php">
+<form id="receveurForm" method="POST" action="http://localhost/100vies/administrateur/php/inscription.php">
+    <input type="hidden" name="role" value="receveur">
     <!-- Étape 1 -->
     <div class="form-step step1 active">
         <div style="position:relative">
@@ -103,7 +192,8 @@
 
 <div class="progress-bar"><div class="progress-bar-fill" id="progress-donneur"></div></div>
 
-<form id="donneurForm" method="POST" action="creer_compte.php">
+<form id="donneurForm" method="POST" action="http://localhost/100vies/administrateur/php/inscription.php">
+    <input type="hidden" name="role" value="donneur">
     <!-- Étape 1 -->
     <div class="form-step step1 active">
         <div style="position:relative">
@@ -165,6 +255,11 @@
 </div>
 </div>
 </div>
+<?php if (!empty($message)) { ?>
+    <p style="color:red; text-align:center;">
+        <?php echo $message; ?>
+    </p>
+<?php } ?>
 <script src="../js/inscription.js"></script>
 </body>
 </html>

@@ -94,7 +94,7 @@ if (isset($_SESSION['success'])) {
     <!-- HERO SECTION -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="../media/aa.mp4" type="video/mp4">
+            <source src="../media/header.mp4" type="video/mp4">
         </video>
         <div class="hero-text">
             <h1>Avec 100 vies, personne ne resterait sans vie.</h1>
@@ -151,7 +151,7 @@ if (isset($_SESSION['success'])) {
                         <h3>Sécurité maximale</h3>
                         <p>Nos centres respectent des protocoles stricts pour garantir la sécurité des donneurs et des receveurs.</p>
                     </div>
-                    <div class="feature-visual glass">
+                    <div class="feature-visual glass ">
                         <img src="../media/close-up-doctor-holding-container.jpg" alt="" width="600px" height="400px">
                     </div>
                 </div>

@@ -71,13 +71,13 @@ function isActiveGroup($pages) {
         Mes notifications 
       </a>
 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php">
+      <a href="http://localhost/100vies/administrateur/php/inscription.php">
         <i class="uil uil-plus"></i> Ajouter un compte
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/receveur/php/receveur.php">
+      <a href="http://localhost/100vies/receveur/php/receveur.php">
         <i class="uil uil-exchange"></i> Modifier statut
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/form.php">
+      <a href="http://localhost/100vies/administrateur/php/form.php">
         <i class="uil uil-signout"></i> Déconnexion
       </a>  
     </div> 
@@ -135,7 +135,7 @@ function isActiveGroup($pages) {
 
   <!-- CTA -->
   <div class="cta">
-    <button onclick="window.location.href='http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php'">
+    <button onclick="window.location.href='http://localhost/100vies/administrateur/php/inscription.php'">
     Rejoignez-nous et sauvez des vies
   </button>
 </div>

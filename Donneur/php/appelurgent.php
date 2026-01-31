@@ -88,13 +88,13 @@ function isActiveGroup($pages) {
         Mes notifications 
       </a>
 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php">
+      <a href="http://localhost/100vies/administrateur/php/inscription.php">
         <i class="uil uil-plus"></i> Ajouter un compte
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/receveur/php/receveur.php">
+      <a href="http://localhost/100vies/receveur/php/receveur.php">
         <i class="uil uil-exchange"></i> Modifier statut
       </a> 
-      <a href="http://localhost/sensibilisation-au-don-de-sang/administrateur/php/form.php">
+      <a href="http://localhost/100vies/administrateur/php/form.php">
         <i class="uil uil-signout"></i> Déconnexion
       </a>  
     </div> 
@@ -107,7 +107,7 @@ function isActiveGroup($pages) {
 <section class="urgent-section">
 
   <div class="urgent-title">
-    <i class="uil uil-heartbeat"></i>
+    <i class="uil uil-heartbeat fs-1"></i>
     Appels urgents au don
   </div>
 
@@ -133,7 +133,7 @@ function isActiveGroup($pages) {
         <p><?= nl2br(htmlspecialchars($appel['description_appel'])) ?></p>
        <a href="eligibilite.php" class="btn-help-link">
   <button class="btn-help" type="button">
-    <i class="uil uil-heart"></i> Je veux aider
+    <i class="uil uil-heart text-light"></i> Je veux aider
   </button>
 </a>
       </div>
@@ -163,6 +163,11 @@ function isActiveGroup($pages) {
         <h5>Contact</h5>
         <p>✉️ contact@100vies.tn</p>
         <p>📞 +216 71 234 567</p>
+        <div class="social-icons">
+          <a href="#"><i class="uil uil-facebook-f"></i></a>
+          <a href="#"><i class="uil uil-instagram"></i></a>
+          <a href="#"><i class="uil uil-twitter"></i></a>
+        </div>
       </div>
     </div>
   </div>

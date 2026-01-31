@@ -99,7 +99,7 @@ nav ul li a{
 
     <form method="POST">
         <div class="input-box">
-            <input type="text" name="name" placeholder="Nom complet" required>
+            <input type="text" name="name" placeholder=" Nom complet" required>
             <input type="email" name="email" placeholder="Email" required>
         </div>
         <div class="input-box">

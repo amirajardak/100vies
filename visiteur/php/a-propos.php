@@ -97,7 +97,7 @@ function isActive($page) {
 
   <!-- CTA -->
   <div class="cta">
-    <button onclick="window.location.href='http://localhost/sensibilisation-au-don-de-sang/administrateur/php/inscription.php'">
+    <button onclick="window.location.href='http://localhost/100vies/administrateur/php/inscription.php'">
     Rejoignez-nous et sauvez des vies
   </button>
 </div>
@@ -113,7 +113,7 @@ function isActive($page) {
       </div>
       <div class="col-md-4 mb-3">
         <h5>Liens rapides</h5>
-        <ul>
+        <ul class='list-unstyled'>
           <li><a href="index1.html">Accueil</a></li>
           <li><a href="campagnes-evenements.php">Campagnes</a></li>
           <li><a href="temoignages.php">Témoignages</a></li>

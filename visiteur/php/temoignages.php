@@ -91,10 +91,10 @@ $temoignages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <div class="row g-4">
 <?php foreach($temoignages as $t): ?>
   <div class="col-md-6">
-    <div class="temoignage-card">
+    <div class="temoignage-card pt-4 ps-4">
       <h5><?= htmlspecialchars($t['nom']) ?></h5>
       <span class="badge-custom"><?= htmlspecialchars($t['role']) ?></span>
-      <p class="mt-2"><?= nl2br(htmlspecialchars($t['histoire'])) ?></p>
+      <p class="mt-3"><?= nl2br(htmlspecialchars($t['histoire'])) ?></p>
     </div>
   </div>
 <?php endforeach; ?>

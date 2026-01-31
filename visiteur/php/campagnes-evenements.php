@@ -140,7 +140,7 @@ $result = mysqli_query($conn, $sql);
             <img src="../media/campagne/<?= htmlspecialchars($ev['image']) ?>" 
                  class="card-img-top" 
                  alt="<?= htmlspecialchars($ev['titre']) ?>" 
-                 style="height:200px; object-fit: cover;">
+                 style="object-fit: cover;">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title fw-bold"><?= htmlspecialchars($ev['titre']) ?></h5>
               <p class="text-muted mb-1" style="font-size:0.9rem;">
